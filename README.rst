@@ -5,7 +5,10 @@ Overview
 
 It depends on ``zc.queue``.
 
-.. image:: https://secure.travis-ci.org/zopefoundation/z3c.taskqueue.png
+|buildstatus|_
+
+.. |buildstatus| image:: https://api.travis-ci.org/zopefoundation/z3c.taskqueue.png?branch=master
+.. _buildstatus: https://travis-ci.org/zopefoundation/z3c.taskqueue
 
 History
 =======
