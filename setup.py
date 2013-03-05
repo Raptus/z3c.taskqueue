@@ -6,7 +6,7 @@ version = '0.2.1.dev0'
 setup(name='z3c.taskqueue',
       version=version,
       description="Task queue service",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
         "Programming Language :: Python",
