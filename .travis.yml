@@ -1,9 +1,10 @@
 language: python
 python:
-    - 
+    - "2.7"
 install:
-    - pip install . --use-mirrors
+    - "python bootstrap.py"
+    - "bin/buildout install test"
 script:
-    - python setup.py test -q
+    - "bin/test"
 notifications:
     email: false
