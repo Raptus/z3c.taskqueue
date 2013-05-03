@@ -14,4 +14,4 @@ History
 =======
 
 ``z3c.taskqueue`` is factored out of ``lovely.remotetask``.
-It is the backend code only. IOW, all UI code is not included.
+It is the backend code only. IOW, no UI code is included.
