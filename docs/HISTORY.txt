@@ -5,7 +5,7 @@ Changelog
 ------------------
 
 - Store string representation of job error instead of error instance,
-to avoid issue when unpickling certain strange error types.
+  to avoid issue when unpickling certain strange error types.
 
 0.2.0 (2012-11-12)
 ------------------
