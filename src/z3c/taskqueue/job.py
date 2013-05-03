@@ -51,6 +51,9 @@ class Job(persistent.Persistent):
     def __repr__(self):
         return '<%s %r>' % (self.__class__.__name__, self.id)
 
+    def setError(self, error):
+        self.error = str(error)
+
 
 class CronJob(Job):
     """A job for reocuring tasks"""

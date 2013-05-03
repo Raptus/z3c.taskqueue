@@ -143,7 +143,7 @@ class BaseTaskService(contained.Contained, persistent.Persistent):
 
     def getError(self, jobid):
         """See interfaces.ITaskService"""
-        return str(self.jobs[jobid].error)
+        return self.jobs[jobid].error
 
     def hasJobsWaiting(self, now=None):
         """
@@ -195,7 +195,7 @@ class BaseTaskService(contained.Contained, persistent.Persistent):
         except ComponentLookupError, error:
             log.error('Task "%s" not found!' % job.task)
             log.exception(error)
-            job.error = error
+            job.setError(error)
             if job.status != interfaces.CRONJOB:
                 job.status = interfaces.ERROR
             return True
@@ -208,7 +208,7 @@ class BaseTaskService(contained.Contained, persistent.Persistent):
             if job.status != interfaces.CRONJOB:
                 job.status = interfaces.COMPLETED
         except task.TaskError, error:
-            job.error = error
+            job.setError(error)
             if job.status != interfaces.CRONJOB:
                 job.status = interfaces.ERROR
         except Exception, error:
@@ -218,7 +218,7 @@ class BaseTaskService(contained.Contained, persistent.Persistent):
                 log.exception(str(error))
                 raise
             else:
-                job.error = error
+                job.setError(error)
                 if job.status != interfaces.CRONJOB:
                     job.status = interfaces.ERROR
                 else:

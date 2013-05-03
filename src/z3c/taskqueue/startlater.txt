@@ -95,5 +95,3 @@ the ``startLater=True`` parameter.
   {'foo': 'bar'}
   
   >>> service.getError(jobid)
-  'None'
-
